@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevarte | Estratégia, Posicionamento e Crescimento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="/imagens/logo_e.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --accent: #6366f1;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Smooth backdrop and glass effects */
+    .glass {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 8s linear infinite;
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    .bg-grid {
+      background-image: radial-gradient(circle at 2px 2px, rgba(99, 102, 241, 0.07) 1px, transparent 0);
+      background-size: 60px 60px;
+    }
+
+    /* Sophisticated Entrance Animations */
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes revealScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-up {
+      transform: translateY(40px);
+    }
+
+    .reveal-scale {
+      transform: scale(0.95);
+    }
+
+    /* Magnetic-like hover for cards */
+    .card-hover {
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.6s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 40px -20px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Hero Text Mask Animation */
+    .mask-text {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      animation: maskReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    @keyframes maskReveal {
+      from {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      }
+
+      to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    /* Floating Orb animations */
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+
+      66% {
+        transform: translate(-40px, 30px) scale(0.85);
+      }
+    }
+
+    .orb {
+      animation: orbFloat 18s ease-in-out infinite;
+    }
+
+    /* Shiny CTA Animation */
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .shimmer-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-effect::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    .glossy-btn {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(165, 180, 252, 0.05) 50%, rgba(99, 102, 241, 0.1) 100%);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(165, 180, 252, 0.3);
+    }
+  </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-[#030303] text-white selection:bg-indigo-500/30 bg-grid">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "MarketAI - Agência de Marketing Digital",
+  "description": "Uma plataforma moderna para agência de marketing com integração de IA para geração de estratégias personalizadas.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
