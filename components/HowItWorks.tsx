@@ -37,10 +37,10 @@ const STEPS = [
 ];
 
 const colorMap: Record<string, { border: string; bg: string; text: string; num: string }> = {
-  indigo:  { border: 'border-indigo-500/30',  bg: 'bg-indigo-600/10',  text: 'text-indigo-400',  num: 'text-indigo-500/20' },
-  violet:  { border: 'border-violet-500/30',  bg: 'bg-violet-600/10',  text: 'text-violet-400',  num: 'text-violet-500/20' },
-  purple:  { border: 'border-purple-500/30',  bg: 'bg-purple-600/10',  text: 'text-purple-400',  num: 'text-purple-500/20' },
-  fuchsia: { border: 'border-fuchsia-500/30', bg: 'bg-fuchsia-600/10', text: 'text-fuchsia-400', num: 'text-fuchsia-500/20' },
+  indigo:  { border: 'border-[#848cf7]/30', bg: 'bg-[#848cf7]/10', text: 'text-[#848cf7]', num: 'text-[#848cf7]/15' },
+  violet:  { border: 'border-[#848cf7]/30', bg: 'bg-[#848cf7]/10', text: 'text-[#848cf7]', num: 'text-[#848cf7]/15' },
+  purple:  { border: 'border-[#848cf7]/30', bg: 'bg-[#848cf7]/10', text: 'text-[#848cf7]', num: 'text-[#848cf7]/15' },
+  fuchsia: { border: 'border-[#848cf7]/30', bg: 'bg-[#848cf7]/10', text: 'text-[#848cf7]', num: 'text-[#848cf7]/15' },
 };
 
 const HowItWorks: React.FC = () => {
@@ -58,7 +58,7 @@ const HowItWorks: React.FC = () => {
           <span className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-400 mb-6 block">Como Funciona</span>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
             Do diagnóstico ao<br />
-            <span className="gradient-text">resultado concreto</span>
+            <span style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>resultado concreto</span>
           </h2>
           <p className="text-gray-500 text-base max-w-xl mx-auto">
             Um processo estruturado em 4 etapas para transformar seu marketing em máquina de crescimento.

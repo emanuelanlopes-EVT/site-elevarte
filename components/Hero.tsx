@@ -160,21 +160,21 @@ const Hero: React.FC = () => {
 
       {/* Floating stat cards */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
-        <div className="absolute top-[18%] left-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.4s' }}>
-          <div className="text-xl font-black gradient-text">120+</div>
-          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Clientes</div>
+        <div className="absolute top-[22%] left-[7%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.4s' }}>
+          <div className="text-xl font-black" style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>98%</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Satisfação</div>
         </div>
-        <div className="absolute top-[18%] right-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
-          <div className="text-xl font-black gradient-text">5x</div>
-          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">ROI Médio</div>
+        <div className="absolute top-[22%] right-[7%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
+          <div className="text-xl font-black" style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>#1</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Região SC</div>
         </div>
-        <div className="absolute bottom-[28%] left-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.6s' }}>
-          <div className="text-xl font-black gradient-text">360°</div>
-          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Marketing</div>
+        <div className="absolute bottom-[30%] left-[7%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.6s' }}>
+          <div className="text-xl font-black" style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Full</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">360° Service</div>
         </div>
-        <div className="absolute bottom-[28%] right-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.7s' }}>
-          <div className="text-xl font-black gradient-text">4 anos</div>
-          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Ativos</div>
+        <div className="absolute bottom-[30%] right-[7%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.7s' }}>
+          <div className="text-xl font-black" style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>24h</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Suporte</div>
         </div>
       </div>
 
