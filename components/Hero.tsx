@@ -120,8 +120,8 @@ const Hero: React.FC = () => {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.08] tracking-tight mb-6">
           <div className="mask-wrapper"><span className="mask-text text-white">Elevamos o seu</span></div>
           <div className="mask-wrapper"><span className="mask-text text-white" style={{ animationDelay: '0.15s' }}>negócio com</span></div>
-          <div className="mt-2">
-            <span className="gradient-text italic">
+          <div className="mt-2 pb-2">
+            <span className="gradient-text italic" style={{ paddingBottom: '0.15em', display: 'inline-block' }}>
               <span ref={wordRef} />
               <span className="animate-pulse">|</span>
             </span>
@@ -155,6 +155,26 @@ const Hero: React.FC = () => {
           {STATS.map((s) => (
             <StatCounter key={s.label} target={s.target} suffix={s.suffix} label={s.label} />
           ))}
+        </div>
+      </div>
+
+      {/* Floating stat cards */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
+        <div className="absolute top-[18%] left-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.4s' }}>
+          <div className="text-xl font-black gradient-text">120+</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Clientes</div>
+        </div>
+        <div className="absolute top-[18%] right-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
+          <div className="text-xl font-black gradient-text">5x</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">ROI Médio</div>
+        </div>
+        <div className="absolute bottom-[28%] left-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.6s' }}>
+          <div className="text-xl font-black gradient-text">360°</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Marketing</div>
+        </div>
+        <div className="absolute bottom-[28%] right-[4%] glass border border-white/10 rounded-2xl px-4 py-3 animate-fade-slide-up" style={{ animationDelay: '1.7s' }}>
+          <div className="text-xl font-black gradient-text">4 anos</div>
+          <div className="text-[9px] uppercase tracking-widest text-gray-500 font-semibold">Ativos</div>
         </div>
       </div>
 

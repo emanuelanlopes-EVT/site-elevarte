@@ -7,6 +7,7 @@ import Cursor from './components/Cursor';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import AIPlanner from './components/AIPlanner';
+import HowItWorks from './components/HowItWorks';
 import Contact from './components/Contact';
 
 const App: React.FC = () => {
@@ -42,6 +43,8 @@ const App: React.FC = () => {
         </div>
 
         <Portfolio />
+
+        <HowItWorks />
 
         <div className="relative">
           <div className="absolute inset-0 bg-indigo-600/5 blur-[100px] -z-10 pointer-events-none"></div>
