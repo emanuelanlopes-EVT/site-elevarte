@@ -44,8 +44,8 @@ Seja direto, específico e orientado a resultados.`;
       });
 
       setResult(response.text || '');
-    } catch (e) {
-      setError('Não foi possível gerar a estratégia. Verifique a chave da API ou tente novamente.');
+    } catch (e: any) {
+      setError(`Erro: ${e?.message || String(e)}`);
     } finally {
       setLoading(false);
     }
