@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Seu nome"
-                    className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-700 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                    className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
                   />
                 </div>
                 <div>
@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="(11) 99999-9999"
-                    className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-700 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                    className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
                   />
                 </div>
               </div>
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="seu@email.com.br"
-                  className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-700 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                  className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
                 />
               </div>
 
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Qual é o seu maior desafio de marketing hoje?"
-                  className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-700 focus:outline-none focus:border-indigo-500/50 transition-colors resize-none"
+                  className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors resize-none"
                 />
               </div>
 
