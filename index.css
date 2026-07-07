@@ -132,19 +132,19 @@
   }
 }
 
+.mask-wrapper {
+  overflow: hidden;
+  padding-bottom: 0.18em;
+}
+
 .mask-text {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  animation: maskReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  display: block;
+  animation: maskReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
 }
 
 @keyframes maskReveal {
-  from {
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-  }
-
-  to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
 }
 
 @keyframes marquee {
