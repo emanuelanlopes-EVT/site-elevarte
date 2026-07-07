@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="orb absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-indigo-600/10 blur-[120px]" />
       </div>

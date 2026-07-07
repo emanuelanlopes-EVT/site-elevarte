@@ -48,7 +48,7 @@ const HowItWorks: React.FC = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="how-it-works" className="py-32 px-6 relative overflow-hidden">
+    <section id="how-it-works" className="py-16 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-indigo-600/5 blur-[120px]" />
       </div>

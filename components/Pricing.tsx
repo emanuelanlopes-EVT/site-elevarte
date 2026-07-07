@@ -128,7 +128,7 @@ const Pricing: React.FC = () => {
   useReveal();
 
   return (
-    <section id="pricing" className="py-32 px-6 relative overflow-hidden">
+    <section id="pricing" className="py-16 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="orb absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-indigo-600/8 blur-[120px]" />
       </div>

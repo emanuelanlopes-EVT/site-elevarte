@@ -23,7 +23,7 @@ const About: React.FC = () => {
   useReveal();
 
   return (
-    <section id="about" className="py-32 px-6 relative overflow-hidden">
+    <section id="about" className="py-16 md:py-32 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left */}

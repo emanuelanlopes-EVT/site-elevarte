@@ -41,7 +41,7 @@ const Portfolio: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="cases" className="py-32 px-6 relative">
+    <section id="cases" className="py-16 md:py-32 px-6 relative">
       <div className="absolute inset-0 bg-[#040404] -z-10" />
 
       <div className="max-w-7xl mx-auto">

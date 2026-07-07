@@ -50,7 +50,7 @@ const Services: React.FC = () => {
   useReveal();
 
   return (
-    <section id="services" className="py-32 px-6">
+    <section id="services" className="py-16 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="reveal reveal-up mb-16 max-w-2xl">
           <span className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-400 mb-6 block">

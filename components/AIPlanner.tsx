@@ -52,7 +52,7 @@ Seja direto, específico e orientado a resultados.`;
   };
 
   return (
-    <section id="ai-planner" className="py-32 px-6">
+    <section id="ai-planner" className="py-16 md:py-32 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="reveal reveal-up text-center mb-16">
           <span className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-400 mb-6 block">

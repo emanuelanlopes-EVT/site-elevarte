@@ -117,7 +117,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.08] tracking-tight mb-6">
+        <h1 className="text-[2.4rem] sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.08] tracking-tight mb-6">
           <div className="mask-wrapper"><span className="mask-text text-white">Elevamos o seu</span></div>
           <div className="mask-wrapper"><span className="mask-text text-white" style={{ animationDelay: '0.15s' }}>negócio com</span></div>
           <div className="mt-2 pb-2">
