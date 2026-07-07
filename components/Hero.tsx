@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center pb-28">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-indigo-500/20 mb-10 animate-fade-slide-up">
           <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
