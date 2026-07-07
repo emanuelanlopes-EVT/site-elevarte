@@ -74,7 +74,7 @@ Seja direto, específico e orientado a resultados.`;
               <select
                 value={niche}
                 onChange={(e) => setNiche(e.target.value)}
-                className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500/50 transition-colors appearance-none"
+                className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500/50 transition-colors appearance-none"
               >
                 <option value="" className="bg-gray-900">Selecione...</option>
                 {niches.map((n) => (
@@ -90,7 +90,7 @@ Seja direto, específico e orientado a resultados.`;
                 value={goal}
                 onChange={(e) => setGoal(e.target.value)}
                 placeholder="Ex: Aumentar vendas online"
-                className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
               />
             </div>
 
@@ -101,7 +101,7 @@ Seja direto, específico e orientado a resultados.`;
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
                 placeholder="Ex: R$ 5.000"
-                className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                className="w-full bg-gray-900/80 border border-white/8 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
               />
             </div>
           </div>
