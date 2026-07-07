@@ -16,14 +16,14 @@ const Contact: React.FC = () => {
     const msg = encodeURIComponent(
       `Olá! Sou ${form.name}.\nE-mail: ${form.email}\nTelefone: ${form.phone}\n\n${form.message}`
     );
-    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
+    window.open(`https://wa.me/5547997667963?text=${msg}`, '_blank');
     setSent(true);
     setTimeout(() => setSent(false), 5000);
   };
 
   const contacts = [
-    { icon: '✆', label: 'WhatsApp', value: '+55 11 99999-9999', href: 'https://wa.me/5511999999999' },
-    { icon: '✉', label: 'E-mail', value: 'contato@elevartemkt.com.br', href: 'mailto:contato@elevartemkt.com.br' },
+    { icon: '✆', label: 'WhatsApp', value: '+55 47 99766-7963', href: 'https://wa.me/5547997667963' },
+    { icon: '✉', label: 'E-mail', value: 'elevarteitajai@gmail.com', href: 'mailto:elevarteitajai@gmail.com' },
     { icon: '◎', label: 'Instagram', value: '@elevartemkt', href: 'https://instagram.com/elevartemkt' },
   ];
 

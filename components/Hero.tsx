@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const WORDS = ['Posicionamento.', 'Crescimento.', 'Resultado.', 'Estratégia.'];
+const WORDS = ['POSICIONAMENTO.', 'CRESCIMENTO.', 'RESULTADO.', 'ESTRATÉGIA.'];
 
 const Hero: React.FC = () => {
   const wordRef = useRef<HTMLSpanElement>(null);
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
           <div className="mask-wrapper"><span className="mask-text text-white">Elevamos o seu</span></div>
           <div className="mask-wrapper"><span className="mask-text text-white" style={{ animationDelay: '0.15s' }}>negócio com</span></div>
           <div className="mt-2">
-            <span className="gradient-text">
+            <span className="gradient-text italic">
               <span ref={wordRef} />
               <span className="animate-pulse">|</span>
             </span>
@@ -107,11 +107,11 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Stats row */}
-        <div className="animate-fade-slide-up mt-20 grid grid-cols-3 gap-6 max-w-xl mx-auto" style={{ animationDelay: '1.2s' }}>
+        <div className="animate-fade-slide-up mt-16 mb-4 grid grid-cols-3 gap-6 max-w-xl mx-auto" style={{ animationDelay: '1.2s' }}>
           {[
             { value: '120+', label: 'Clientes' },
             { value: '5x', label: 'ROI Médio' },
-            { value: '8 anos', label: 'de mercado' },
+            { value: '4 anos', label: 'ativos' },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-2xl md:text-3xl font-black gradient-text">{s.value}</div>
@@ -120,6 +120,30 @@ const Hero: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Floating bubbles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div
+            key={`bubble-${i}`}
+            className="absolute rounded-full border border-indigo-400/20"
+            style={{
+              left: `${10 + Math.random() * 80}%`,
+              top: `${10 + Math.random() * 80}%`,
+              width: `${30 + i * 20}px`,
+              height: `${30 + i * 20}px`,
+              background: `radial-gradient(circle at 30% 30%, rgba(99,102,241,0.08), transparent)`,
+              animation: `orbFloat ${12 + i * 3}s ease-in-out infinite`,
+              animationDelay: `${i * -2}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Extra light beam */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-[40%] bg-gradient-to-b from-indigo-400/30 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-[1px] h-[30%] bg-gradient-to-b from-purple-400/20 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-1/3 w-[1px] h-[25%] bg-gradient-to-b from-indigo-300/15 to-transparent pointer-events-none" />
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
