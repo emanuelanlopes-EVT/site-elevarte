@@ -2,6 +2,50 @@ import React, { useEffect, useRef } from 'react';
 
 const WORDS = ['POSICIONAMENTO.', 'CRESCIMENTO.', 'RESULTADO.', 'ESTRATÉGIA.'];
 
+const STATS = [
+  { target: 120, suffix: '+', label: 'Clientes' },
+  { target: 5, suffix: 'x', label: 'ROI Médio' },
+  { target: 4, suffix: ' anos', label: 'Ativos' },
+];
+
+function useCounter(target: number, duration = 1800) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const started = useRef(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !started.current) {
+        started.current = true;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = String(Math.round(ease * target));
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = String(target);
+        };
+        requestAnimationFrame(tick);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration]);
+  return ref;
+}
+
+const StatCounter: React.FC<{ target: number; suffix: string; label: string }> = ({ target, suffix, label }) => {
+  const numRef = useCounter(target);
+  return (
+    <div className="text-center">
+      <div className="text-2xl md:text-3xl font-black gradient-text">
+        <span ref={numRef}>0</span>{suffix}
+      </div>
+      <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1 font-semibold">{label}</div>
+    </div>
+  );
+};
+
 const Hero: React.FC = () => {
   const wordRef = useRef<HTMLSpanElement>(null);
   const indexRef = useRef(0);
@@ -108,15 +152,8 @@ const Hero: React.FC = () => {
 
         {/* Stats row */}
         <div className="animate-fade-slide-up mt-16 mb-4 grid grid-cols-3 gap-6 max-w-xl mx-auto" style={{ animationDelay: '1.2s' }}>
-          {[
-            { value: '120+', label: 'Clientes' },
-            { value: '5x', label: 'ROI Médio' },
-            { value: '4 anos', label: 'ativos' },
-          ].map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-black gradient-text">{s.value}</div>
-              <div className="text-[10px] uppercase tracking-widest text-gray-500 mt-1 font-semibold">{s.label}</div>
-            </div>
+          {STATS.map((s) => (
+            <StatCounter key={s.label} target={s.target} suffix={s.suffix} label={s.label} />
           ))}
         </div>
       </div>
