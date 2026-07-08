@@ -1,4 +1,5 @@
 import React from 'react';
+import RevealText from './RevealText';
 import { useReveal } from './useReveal';
 
 const services = [
@@ -57,7 +58,7 @@ const Services: React.FC = () => {
             Serviços
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-            Tudo que sua marca precisa<br />
+            <RevealText text="Tudo que sua marca precisa" /><br />
             <span className="gradient-text">em um só lugar</span>
           </h2>
         </div>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useReveal } from './useReveal';
+import RevealText from './RevealText';
 
 const pillars = [
   {
@@ -33,8 +34,8 @@ const About: React.FC = () => {
                 Quem Somos
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white mb-8">
-                Agência 360°<br />
-                <span className="gradient-text">que entrega resultado</span>
+                <RevealText text="Agência 360°" /><br />
+                <span className="gradient-text"><RevealText text="que entrega resultado" delay={300} /></span>
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed font-light mb-6">
                 A Elevarte nasceu da crença de que marketing eficaz exige estratégia sólida, execução precisa e visão de negócio. Somos mais que uma agência — somos parceiros de crescimento.

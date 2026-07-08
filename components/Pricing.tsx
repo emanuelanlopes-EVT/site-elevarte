@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import RevealText from './RevealText';
 import { useReveal } from './useReveal';
 
 const WA = 'https://wa.me/5547997667963';
@@ -138,7 +139,7 @@ const Pricing: React.FC = () => {
         <div className="reveal reveal-up text-center mb-20">
           <span className="text-[10px] uppercase tracking-[0.3em] font-black mb-6 block" style={{ color: '#848cf7' }}>Planos</span>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
-            Investimento que<br />
+            <RevealText text="Investimento que" /><br />
             <span style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               gera retorno real
             </span>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import RevealText from './RevealText';
 import { useReveal } from './useReveal';
-import { GoogleGenAI } from '@google/genai';
 import { Niche } from '../types';
 
 const niches = Object.values(Niche);
@@ -21,7 +21,7 @@ const AIPlanner: React.FC = () => {
     setResult('');
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+      const apiKey = process.env.API_KEY || '';
       const prompt = `Você é um estrategista sênior da Elevarte, agência 360° de marketing digital.
 
 Crie uma estratégia de marketing personalizada e detalhada para:
@@ -38,12 +38,18 @@ Responda em português com:
 
 Seja direto, específico e orientado a resultados.`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
-        contents: prompt,
-      });
-
-      setResult(response.text || '');
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error?.message || JSON.stringify(data));
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      setResult(text);
     } catch (e: any) {
       setError(`Erro: ${e?.message || String(e)}`);
     } finally {
@@ -59,7 +65,7 @@ Seja direto, específico e orientado a resultados.`;
             IA Planner
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
-            Sua estratégia de marketing<br />
+            <RevealText text="Sua estratégia de marketing" /><br />
             <span className="gradient-text">gerada por IA em segundos</span>
           </h2>
           <p className="text-gray-500 text-base max-w-xl mx-auto">
