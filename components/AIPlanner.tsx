@@ -38,11 +38,15 @@ Responda em português com:
 
 Seja direto, específico e orientado a resultados.`;
 
+      const isOAuth = apiKey.startsWith('AQ.');
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent${isOAuth ? '' : `?key=${apiKey}`}`,
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(isOAuth ? { 'Authorization': `Bearer ${apiKey}` } : {}),
+          },
           body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
         }
       );
