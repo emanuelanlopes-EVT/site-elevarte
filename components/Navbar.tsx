@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Logo from './Logo';
 
 interface NavbarProps {
   onLogoUpload: (url: string) => void;
@@ -38,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ onLogoUpload, logoUrl }) => {
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
-          <Logo className="h-8 w-auto" color="#848cf7" />
+          <img src="/imagens/logo.png" alt="Elevarte" className="h-8 w-auto object-contain transition-opacity group-hover:opacity-70" />
           <span className="text-white font-black text-xl tracking-tight transition-opacity group-hover:opacity-70">ELEVARTE</span>
         </a>
 
