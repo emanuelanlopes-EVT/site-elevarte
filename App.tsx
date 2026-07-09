@@ -65,7 +65,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/imagens/logo.png" alt="Elevarte" className="h-10 w-auto object-contain" />
+                <img src="/imagens/logo.png.png" alt="Elevarte" className="h-10 w-auto object-contain" />
                 <span className="text-xl font-black tracking-tight text-white">ELEVARTE</span>
               </div>
               <p className="text-gray-500 text-sm max-w-sm leading-relaxed font-light">
