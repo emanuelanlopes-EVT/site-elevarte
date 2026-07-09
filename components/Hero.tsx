@@ -197,10 +197,6 @@ const Hero: React.FC = () => {
         ))}
       </div>
 
-      {/* Extra light beam */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-[40%] bg-gradient-to-b from-indigo-400/30 to-transparent pointer-events-none" />
-      <div className="absolute top-0 left-1/3 w-[1px] h-[30%] bg-gradient-to-b from-purple-400/20 to-transparent pointer-events-none" />
-      <div className="absolute top-0 right-1/3 w-[1px] h-[25%] bg-gradient-to-b from-indigo-300/15 to-transparent pointer-events-none" />
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
