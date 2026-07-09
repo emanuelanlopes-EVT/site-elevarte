@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ onLogoUpload, logoUrl }) => {
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
           <img src="/imagens/logo.png.png" alt="Elevarte" className="h-8 w-auto object-contain transition-opacity group-hover:opacity-70" />
-          <span className="text-white font-black text-xl tracking-tight transition-opacity group-hover:opacity-70">ELEVARTE</span>
+          <img src="/imagens/logotipo.png.png" alt="Elevarte" className="h-6 w-auto object-contain transition-opacity group-hover:opacity-70" />
         </a>
 
         {/* Desktop links */}
