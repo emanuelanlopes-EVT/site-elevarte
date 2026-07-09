@@ -119,8 +119,8 @@ const Hero: React.FC = () => {
         {/* Main headline */}
         <h1 className="text-[2.4rem] sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.98] tracking-tight mb-6">
           <div className="mask-wrapper"><span className="mask-text text-white">Elevamos o seu</span></div>
-          <div className="mask-wrapper"><span className="mask-text text-white" style={{ animationDelay: '0.15s' }}>negócio com</span></div>
-          <div className="pb-2">
+          <div className="mask-wrapper" style={{ marginTop: '-0.18em' }}><span className="mask-text text-white" style={{ animationDelay: '0.15s' }}>negócio com</span></div>
+          <div className="pb-2" style={{ marginTop: '-0.12em' }}>
             <span className="gradient-text italic" style={{ paddingBottom: '0.15em', display: 'inline-block' }}>
               <span ref={wordRef} />
             </span>

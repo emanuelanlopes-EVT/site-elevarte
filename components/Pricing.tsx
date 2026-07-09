@@ -7,8 +7,6 @@ const WA = 'https://wa.me/5547997667963';
 const plans = [
   {
     name: 'Essencial',
-    price: 'R$ 1.500',
-    period: '/mês',
     description: 'Ideal para negócios que estão começando a investir em presença digital.',
     color: '#4ade80',
     colorDim: 'rgba(74,222,128,0.12)',
@@ -17,19 +15,17 @@ const plans = [
     popular: false,
     features: [
       'Gestão de 1 rede social',
-      '12 posts/mês (feed + stories)',
-      'Tráfego pago até R$ 500 de verba',
+      '8 postagens/mês (feed + stories)',
+      'Gestão de tráfego pago (Meta Ads)',
       'Relatório mensal de performance',
       'Atendimento via WhatsApp',
       'Identidade visual básica',
     ],
-    cta: 'Começar agora',
+    cta: 'Quero saber mais',
     waMsg: 'Olá! Tenho interesse no plano Essencial da Elevarte.',
   },
   {
     name: 'Crescimento',
-    price: 'R$ 3.500',
-    period: '/mês',
     description: 'Para marcas que querem escalar com consistência e resultados reais.',
     color: '#848cf7',
     colorDim: 'rgba(132,140,247,0.12)',
@@ -37,21 +33,18 @@ const plans = [
     icon: '◈',
     popular: true,
     features: [
-      'Gestão de 2 redes sociais',
-      '20 posts/mês + reels e stories',
-      'Tráfego pago até R$ 2.000 de verba',
+      '12 postagens/mês + reels e stories',
+      'Tráfego pago (Meta + Google Ads)',
       'Criação de criativos premium',
       'Reunião quinzenal de estratégia',
       'Funil de vendas estruturado',
       'Relatório semanal com KPIs',
     ],
-    cta: 'Quero crescer',
+    cta: 'Quero saber mais',
     waMsg: 'Olá! Tenho interesse no plano Crescimento da Elevarte.',
   },
   {
     name: 'Premium 360°',
-    price: 'R$ 6.500',
-    period: '/mês',
     description: 'Solução completa para marcas que exigem o melhor em cada detalhe.',
     color: '#c084fc',
     colorDim: 'rgba(192,132,252,0.12)',
@@ -60,15 +53,15 @@ const plans = [
     popular: false,
     features: [
       'Gestão de 3+ redes sociais',
-      'Conteúdo ilimitado + vídeos',
-      'Tráfego pago até R$ 5.000 de verba',
+      '30 conteúdos/mês + vídeos',
+      'Tráfego pago full (Meta + Google Ads)',
       'Estratégia full-funnel completa',
       'Account manager dedicado',
       'Produção de vídeo mensal',
       'Reunião semanal de performance',
       'SEO + automações de marketing',
     ],
-    cta: 'Falar com estrategista',
+    cta: 'Quero saber mais',
     waMsg: 'Olá! Tenho interesse no plano Premium 360° da Elevarte.',
   },
 ];
@@ -174,8 +167,7 @@ const Pricing: React.FC = () => {
 
                 {/* Price */}
                 <div className="mb-2">
-                  <span className="text-4xl font-black" style={{ color: plan.color }}>{plan.price}</span>
-                  <span className="text-gray-500 text-sm ml-1">{plan.period}</span>
+                  <span className="text-2xl font-black" style={{ color: plan.color }}>Valores sob consulta</span>
                 </div>
                 <div className="h-px mb-6" style={{ background: plan.border }} />
 

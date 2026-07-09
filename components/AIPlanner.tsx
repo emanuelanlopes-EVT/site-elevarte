@@ -41,12 +41,17 @@ Seja direto, específico e orientado a resultados.`;
 
       const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-1.5-flash',
         contents: prompt,
       });
       setResult(response.text || '');
     } catch (e: any) {
-      setError(`Erro: ${e?.message || String(e)}`);
+      const msg = String(e?.message || e);
+      if (msg.includes('429') || msg.toLowerCase().includes('quota') || msg.includes('RESOURCE_EXHAUSTED')) {
+        setError('Estamos com muitas solicitações no momento 😅. Aguarde cerca de 1 minuto e tente novamente — ou fale direto com um estrategista no WhatsApp.');
+      } else {
+        setError('Não foi possível gerar a estratégia agora. Tente novamente em instantes ou fale com um estrategista.');
+      }
     } finally {
       setLoading(false);
     }
