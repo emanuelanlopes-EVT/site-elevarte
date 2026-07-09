@@ -123,7 +123,6 @@ const Hero: React.FC = () => {
           <div className="mt-2 pb-2">
             <span className="gradient-text italic" style={{ paddingBottom: '0.15em', display: 'inline-block' }}>
               <span ref={wordRef} />
-              <span className="animate-pulse">|</span>
             </span>
           </div>
         </h1>
