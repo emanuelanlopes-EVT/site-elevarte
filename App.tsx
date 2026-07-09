@@ -66,7 +66,7 @@ const App: React.FC = () => {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
                 <img src="/imagens/logo.png.png" alt="Elevarte" className="h-10 w-auto object-contain" />
-                <img src="/imagens/logotipo.png.png" alt="Elevarte" className="h-7 w-auto object-contain" />
+                <img src="/imagens/woodmark.png" alt="Elevarte" className="h-7 w-auto object-contain" />
               </div>
               <p className="text-gray-500 text-sm max-w-sm leading-relaxed font-light">
                 Agência 360º focada em posicionamento, crescimento e vendas. A estratégia vem antes da execução.
