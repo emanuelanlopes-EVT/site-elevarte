@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RevealText from './RevealText';
 import { useReveal } from './useReveal';
+import { GoogleGenAI } from '@google/genai';
 import { Niche } from '../types';
 
 const niches = Object.values(Niche);
@@ -38,22 +39,12 @@ Responda em português com:
 
 Seja direto, específico e orientado a resultados.`;
 
-      const isOAuth = apiKey.startsWith('AQ.');
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent${isOAuth ? '' : `?key=${apiKey}`}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            ...(isOAuth ? { 'Authorization': `Bearer ${apiKey}` } : {}),
-          },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-        }
-      );
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error?.message || JSON.stringify(data));
-      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-      setResult(text);
+      const ai = new GoogleGenAI({ apiKey });
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.0-flash',
+        contents: prompt,
+      });
+      setResult(response.text || '');
     } catch (e: any) {
       setError(`Erro: ${e?.message || String(e)}`);
     } finally {
