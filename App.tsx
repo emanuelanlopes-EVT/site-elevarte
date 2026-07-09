@@ -10,6 +10,7 @@ import AIPlanner from './components/AIPlanner';
 import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
 import ExtraServices from './components/ExtraServices';
+import Logo from './components/Logo';
 import Contact from './components/Contact';
 
 const App: React.FC = () => {
@@ -65,11 +66,8 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <img
-                  src={logoUrl || "imagens/logo_branca_fundo_transparente.png"}
-                  alt="Logo"
-                  className="h-10 w-auto object-contain"
-                />
+                <Logo className="h-10 w-auto" color="#848cf7" />
+                <span className="text-xl font-black tracking-tight text-white">ELEVARTE</span>
               </div>
               <p className="text-gray-500 text-sm max-w-sm leading-relaxed font-light">
                 Agência 360º focada em posicionamento, crescimento e vendas. A estratégia vem antes da execução.
@@ -97,7 +95,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest font-bold text-gray-600">
-            <div>© 2024 ELEVARTE AGÊNCIA 360. Todos os direitos reservados.</div>
+            <div>© {new Date().getFullYear()} ELEVARTE AGÊNCIA 360. Todos os direitos reservados. Feito por Elevarte.</div>
             <div className="flex gap-8">
               <a href="#" className="hover:text-white">Privacidade</a>
               <a href="#" className="hover:text-white">Termos</a>

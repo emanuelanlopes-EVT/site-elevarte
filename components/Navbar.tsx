@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Logo from './Logo';
 
 interface NavbarProps {
   onLogoUpload: (url: string) => void;
@@ -36,26 +37,10 @@ const Navbar: React.FC<NavbarProps> = ({ onLogoUpload, logoUrl }) => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <button
-          onClick={() => fileRef.current?.click()}
-          className="flex items-center gap-2 group"
-          title="Clique para trocar o logo"
-        >
-          <img
-            src={logoUrl || '/imagens/logo_branca_fundo_transparente.png'}
-            alt="Elevarte"
-            className="h-9 w-auto object-contain transition-opacity group-hover:opacity-70"
-            onError={(e) => {
-              const t = e.currentTarget;
-              t.style.display = 'none';
-              const span = document.createElement('span');
-              span.className = 'text-white font-black text-xl tracking-widest';
-              span.textContent = 'ELEVARTE';
-              t.parentElement?.appendChild(span);
-            }}
-          />
-          <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleFile} />
-        </button>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <Logo className="h-8 w-auto" color="#848cf7" />
+          <span className="text-white font-black text-xl tracking-tight transition-opacity group-hover:opacity-70">ELEVARTE</span>
+        </a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
