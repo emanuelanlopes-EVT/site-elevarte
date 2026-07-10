@@ -256,7 +256,7 @@ const Pricing: React.FC = () => {
         </div>
 
         <p className="text-center text-[10px] text-gray-700 uppercase tracking-widest font-semibold mt-8">
-          Todos os planos incluem contrato sem fidelidade mínima · Cancele quando quiser
+          Contrato mínimo de 3 meses · Tempo necessário para a estratégia gerar resultados consistentes
         </p>
       </div>
     </section>
