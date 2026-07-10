@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
           </div>
         </h1>
 
-        <p className="animate-fade-slide-up text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light mt-8 mb-12" style={{ animationDelay: '0.8s' }}>
+        <p className="animate-fade-slide-up text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light mt-4 md:mt-8 mb-10 md:mb-12" style={{ animationDelay: '0.8s' }}>
           A estratégia vem antes da execução. Combinamos inteligência de dados, criatividade e tecnologia para transformar sua marca.
         </p>
 

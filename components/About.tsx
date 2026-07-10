@@ -33,9 +33,9 @@ const About: React.FC = () => {
               <span className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-400 mb-6 block">
                 Quem Somos
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white mb-8">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white mb-6">
                 <RevealText text="Agência 360°" /><br />
-                <span className="gradient-text"><RevealText text="que entrega resultado" delay={300} /></span>
+                <span className="gradient-text">que entrega resultado</span>
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed font-light mb-6">
                 A Elevarte nasceu da crença de que marketing eficaz exige estratégia sólida, execução precisa e visão de negócio. Somos mais que uma agência — somos parceiros de crescimento.

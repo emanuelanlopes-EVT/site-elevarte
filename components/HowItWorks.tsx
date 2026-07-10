@@ -59,7 +59,7 @@ const HowItWorks: React.FC = () => {
           <span className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-400 mb-6 block">Como Funciona</span>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
             <RevealText text="Do diagnóstico ao" /><br />
-            <span style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}><RevealText text="resultado concreto" delay={200} /></span>
+            <span style={{ background: 'linear-gradient(135deg,#fff 0%,#848cf7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>resultado concreto</span>
           </h2>
           <p className="text-gray-500 text-base max-w-xl mx-auto">
             Um processo estruturado em 4 etapas para transformar seu marketing em máquina de crescimento.

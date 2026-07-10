@@ -33,10 +33,9 @@ const RevealText: React.FC<RevealTextProps> = ({
             const interval = setInterval(() => {
               i++;
               setRevealed(i);
-              setColored(i); // accent color is at the wave front
+              setColored(i);
               if (i >= text.length) {
                 clearInterval(interval);
-                // after fully revealed, fade accent out
                 setTimeout(() => setColored(-1), 300);
               }
             }, speed);
@@ -44,33 +43,46 @@ const RevealText: React.FC<RevealTextProps> = ({
           return () => clearTimeout(timeout);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, [text, delay, speed]);
 
+  // Split into words so letters never break in the middle of a word.
+  const words = text.split(' ');
+  let globalIndex = -1; // running char index across the whole text
+
   return (
     <Tag ref={ref as any} className={className} aria-label={text}>
-      {text.split('').map((char, i) => {
-        const isRevealed = i < revealed;
-        const isAccent = colored !== -1 && i >= colored - 3 && i < colored;
-
+      {words.map((word, wi) => {
+        const charEls = word.split('').map((char) => {
+          globalIndex++;
+          const i = globalIndex;
+          const isRevealed = i < revealed;
+          const isAccent = colored !== -1 && i >= colored - 3 && i < colored;
+          return (
+            <span
+              key={i}
+              style={{
+                opacity: isRevealed ? 1 : 0,
+                color: isAccent ? '#848cf7' : 'inherit',
+                transition: isAccent
+                  ? 'color 0.3s ease'
+                  : 'color 0.6s ease, opacity 0.1s ease',
+              }}
+            >
+              {char}
+            </span>
+          );
+        });
+        // account for the space that followed this word (except last)
+        if (wi < words.length - 1) globalIndex++;
         return (
-          <span
-            key={i}
-            style={{
-              display: 'inline-block',
-              opacity: isRevealed ? 1 : 0,
-              color: isAccent ? '#848cf7' : 'inherit',
-              transition: isAccent
-                ? 'color 0.3s ease'
-                : 'color 0.6s ease, opacity 0.1s ease',
-              whiteSpace: char === ' ' ? 'pre' : undefined,
-            }}
-          >
-            {char}
-          </span>
+          <React.Fragment key={wi}>
+            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>{charEls}</span>
+            {wi < words.length - 1 ? ' ' : null}
+          </React.Fragment>
         );
       })}
     </Tag>
