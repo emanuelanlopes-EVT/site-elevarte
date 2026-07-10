@@ -15,6 +15,36 @@ const AIPlanner: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const downloadPDF = () => {
+    const win = window.open('', '_blank');
+    if (!win) return;
+    const html = result
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n/g, '<br/>');
+    win.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Estratégia Elevarte</title>
+      <style>
+        body{font-family:Arial,Helvetica,sans-serif;color:#1a1a2e;max-width:720px;margin:40px auto;padding:0 24px;line-height:1.6}
+        .brand{font-size:26px;font-weight:800;color:#6366f1;letter-spacing:-.5px}
+        .tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#848cf7;font-weight:700;margin-top:4px}
+        .box{margin:24px 0;padding:16px 20px;background:#f4f5ff;border-radius:12px;font-size:14px}
+        .plan{margin-top:24px;font-size:14px}
+        strong{color:#4338ca}
+        hr{border:none;border-top:1px solid #e5e7eb;margin:24px 0}
+        .foot{margin-top:40px;font-size:11px;color:#9ca3af;text-align:center}
+      </style></head><body>
+      <div class="brand">ELEVARTE</div>
+      <div class="tag">Agência 360° · Estratégia gerada por IA</div>
+      <div class="box"><strong>Nicho:</strong> ${niche}<br/><strong>Objetivo:</strong> ${goal}<br/><strong>Orçamento:</strong> ${budget || 'não informado'}</div>
+      <hr/>
+      <div class="plan">${html}</div>
+      <div class="foot">© ${new Date().getFullYear()} Elevarte Agência 360 · agenciaelevarte.com.br</div>
+      </body></html>`);
+    win.document.close();
+    win.focus();
+    setTimeout(() => win.print(), 400);
+  };
+
   const generate = async () => {
     if (!niche || !goal) return;
     setLoading(true);
@@ -150,11 +180,26 @@ Seja direto, específico e orientado a resultados.`;
               </div>
               <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="#contact"
+                  href={`https://wa.me/5547997667963?text=${encodeURIComponent(
+                    `Olá! Usei o IA Planner da Elevarte 🚀\n\n` +
+                    `📌 Nicho: ${niche}\n` +
+                    `🎯 Objetivo: ${goal}\n` +
+                    `💰 Orçamento: ${budget || 'não informado'}\n\n` +
+                    `Recebi este plano e gostaria de conversar sobre ele:\n\n` +
+                    result
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 text-center py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest transition-all duration-300"
                 >
                   Falar com um Estrategista
                 </a>
+                <button
+                  onClick={downloadPDF}
+                  className="flex-1 py-3 rounded-xl glass border border-white/8 text-white text-xs font-bold uppercase tracking-widest hover:border-indigo-400/40 transition-all duration-300"
+                >
+                  ⬇ Baixar PDF
+                </button>
                 <button
                   onClick={() => setResult('')}
                   className="flex-1 py-3 rounded-xl glass border border-white/8 text-gray-400 text-xs font-bold uppercase tracking-widest hover:border-white/20 transition-all duration-300"
