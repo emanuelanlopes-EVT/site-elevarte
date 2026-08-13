@@ -6,10 +6,10 @@ interface NavbarProps {
 }
 
 const links = [
-  { href: '#about', label: 'Quem Somos' },
+  { href: '#/sobre', label: 'Quem Somos' },
   { href: '#services', label: 'Serviços' },
-  { href: '#cases', label: 'Cases' },
-  { href: '#ai-planner', label: 'IA Planner' },
+  { href: '#/cases', label: 'Cases' },
+  { href: '#/blog', label: 'Blog' },
   { href: '#contact', label: 'Contato' },
 ];
 
@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ onLogoUpload, logoUrl }) => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between min-h-[40px]">
-        <a href="#" className="flex items-center gap-2.5 group leading-none">
+        <a href="#/" className="flex items-center gap-2.5 group leading-none">
           <img src="/imagens/logo.png.png" alt="Elevarte" className="h-8 w-auto object-contain block transition-opacity group-hover:opacity-70" />
           <img src="/imagens/woodmark.png.png" alt="Elevarte" className="h-7 w-auto object-contain block transition-opacity group-hover:opacity-70" />
         </a>
