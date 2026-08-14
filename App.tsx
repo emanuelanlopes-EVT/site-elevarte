@@ -11,10 +11,41 @@ import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
 import ExtraServices from './components/ExtraServices';
 import Contact from './components/Contact';
+import SobrePage from './components/SobrePage';
+import CasesPage from './components/CasesPage';
+import BlogPage from './components/BlogPage';
+
+function getRoute(): string {
+  const h = window.location.hash.replace(/^#\/?/, '');
+  if (h.startsWith('sobre')) return 'sobre';
+  if (h.startsWith('cases')) return 'cases';
+  if (h.startsWith('blog')) return 'blog';
+  return 'home';
+}
 
 const App: React.FC = () => {
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
+  const [route, setRoute] = useState<string>(getRoute());
+
+  useEffect(() => {
+    const onHash = () => {
+      const r = getRoute();
+      setRoute(r);
+      if (r === 'home') {
+        const id = window.location.hash.replace(/^#\/?/, '');
+        if (id) {
+          setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 60);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,36 +60,44 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Cursor />
-      <div 
+      <div
         className="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-indigo-600 via-indigo-400 to-white z-[9998] transition-all duration-100"
         style={{ width: `${progress}%` }}
       />
       <Navbar onLogoUpload={setLogoUrl} logoUrl={logoUrl} />
 
-      <main>
-        <Hero />
+      {route === 'sobre' ? (
+        <SobrePage />
+      ) : route === 'cases' ? (
+        <CasesPage />
+      ) : route === 'blog' ? (
+        <BlogPage />
+      ) : (
+        <main>
+          <Hero />
 
-        <About />
+          <About />
 
-        <div className="bg-[#050505]">
-          <Services />
-        </div>
+          <div className="bg-[#050505]">
+            <Services />
+          </div>
 
-        <Portfolio />
+          <Portfolio />
 
-        <HowItWorks />
+          <HowItWorks />
 
-        <Pricing />
+          <Pricing />
 
-        <ExtraServices />
+          <ExtraServices />
 
-        <div className="relative">
-          <div className="absolute inset-0 bg-indigo-600/5 blur-[100px] -z-10 pointer-events-none"></div>
-          <AIPlanner />
-        </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-indigo-600/5 blur-[100px] -z-10 pointer-events-none"></div>
+            <AIPlanner />
+          </div>
 
-        <Contact />
-      </main>
+          <Contact />
+        </main>
+      )}
 
       <footer className="py-20 border-t border-white/5 px-6 bg-[#050505]">
         <div className="max-w-7xl mx-auto">
@@ -76,9 +115,10 @@ const App: React.FC = () => {
             <div>
               <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-white mb-6">Institucional</h4>
               <ul className="space-y-4 text-sm text-gray-500 font-medium">
-                <li><a href="#about" className="hover:text-indigo-400 transition-colors">Quem Somos</a></li>
+                <li><a href="#/sobre" className="hover:text-indigo-400 transition-colors">Quem Somos</a></li>
                 <li><a href="#services" className="hover:text-indigo-400 transition-colors">Serviços</a></li>
-                <li><a href="#cases" className="hover:text-indigo-400 transition-colors">Cases</a></li>
+                <li><a href="#/cases" className="hover:text-indigo-400 transition-colors">Cases</a></li>
+                <li><a href="#/blog" className="hover:text-indigo-400 transition-colors">Blog</a></li>
                 <li><a href="#ai-planner" className="hover:text-indigo-400 transition-colors">IA Planner</a></li>
               </ul>
             </div>
